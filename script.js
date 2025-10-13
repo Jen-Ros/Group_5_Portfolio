@@ -15,17 +15,53 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", isLight ? "light" : "dark");
 });
 
-// ===== Editable About Section =====
-const editButton = document.getElementById("edit-about");
-const aboutText = document.getElementById("about-text");
-let isEditing = false;
 
-editButton.addEventListener("click", () => {
-  isEditing = !isEditing;
-  aboutText.contentEditable = isEditing;
-  if (isEditing) aboutText.focus();
-  editButton.textContent = isEditing ? "💾 Save" : "✏️ Edit";
+// ===== ABOUT US SECTION =====
+document.addEventListener('DOMContentLoaded', function() {
+            const photoStack = document.getElementById('photoStack');
+            const photos = document.querySelectorAll('.photo');
+            const personInfos = document.querySelectorAll('.person-info');
+            
+            // Sample placeholder images (in a real scenario, you would use actual image URLs)
+            const imageUrls = [
+                'images/ronald.png',
+                'images/jennie.png',
+                'images/roland.png',
+                'images/paul.png',            ];
+  
+            let currentPerson = 1;
+            
+            photoStack.addEventListener('click', function() {
+                // Remove active class from current photo and info
+                document.querySelector('.photo.active').classList.remove('active');
+                document.querySelector('.person-info.active').classList.remove('active');
+                
+                // Move to next person (cycle back to 1 after 4)
+                currentPerson = currentPerson % 4 + 1;
+                
+                // Add active class to new photo and info
+                document.querySelector(`.photo[data-person="${currentPerson}"]`).classList.add('active');
+                document.querySelector(`.person-info[data-person="${currentPerson}"]`).classList.add('active');
+            });
+        });
+
+// ===== OVERVIEW Section =====
+document.addEventListener('DOMContentLoaded', function() {
+    const overviewLink = document.querySelector('a[href="#overview"]');
+    if (overviewLink) {
+        overviewLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            const overviewSection = document.getElementById('overview');
+            if (overviewSection) {
+                overviewSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    }
 });
+
 
 // ===== Quote Fetching =====
 async function getQuote() {

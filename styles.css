@@ -203,139 +203,354 @@ a:hover { text-decoration: underline; }
   .nav {
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
   }
 }
 
-/* Hero */
-img.intro-logo {
-    width: 170px;
-    margin: 0.5rem auto;
+/* Offset sections for sticky navbar */
+section {
+  scroll-margin-top: 80px; /* adjust based on your navbar height */
 }
 
-.introduction {
-    text-align: center;
-    margin-bottom: 5rem;
+/* ===== HOME SECTION ===== */
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
 }
 
-.introduction .intro-text {
-    font-size: 4.5rem;
+.home-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--brand);
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  animation: fadeInDown 1.2s ease forwards;
+}
+
+.home-tagline {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-style: italic;
+  color: var(--muted);
+  letter-spacing: 1px;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.home-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+  background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.home-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+}
+
+
+/* ==== About Us Section ==== */
+header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .photo-section {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stacked-photos {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .stacked-photos:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+          transition: all 0.5s ease;
+          background-size: cover;
+          background-position: center;
+          opacity: 0.5;              
+          visibility: visible;        
+          filter: blur(1px) brightness(0.8); 
+          transition: all 0.5s ease;
+        }
+
+        .photo-1 {
+          transform: rotate(5deg);
+          z-index: 1;
+          border: 2px solid rgba(212, 175, 55, 0.5);
+          background:
+            url("images/ronald.png"),
+            linear-gradient(to bottom,
+              rgba(0, 0, 0, 0.731),
+              rgba(11, 18, 32, 0.911),
+              rgba(212, 175, 55, 0.612)
+            );
+          background-size: cover;
+          background-position: center;
+          left: 30px;
+          top: 30px;
+        }
+
+        .photo-2 {
+          transform: rotate(5deg);
+          z-index: 1;
+          border: 2px solid rgba(212, 175, 55, 0.5);
+          background:
+            url("images/jennie.png"),
+            linear-gradient(to bottom,
+              rgba(0, 0, 0, 0.731),
+              rgba(11, 18, 32, 0.769),
+              rgba(212, 175, 55, 0.311)
+            );
+          background-size: cover;
+          background-position: center;
+          left: 30px;
+          top: 30px;
+        }
+
+        .photo-3 {
+          transform: rotate(5deg);
+          z-index: 1;
+          border: 2px solid rgba(212, 175, 55, 0.5);
+          background:
+            url("images/roland.png"),
+            linear-gradient(to bottom,
+              rgba(0, 0, 0, 0.872),
+              rgb(11, 18, 32),
+              rgba(212, 175, 55, 0.667)
+            );
+          background-size: cover;
+          background-position: center;
+          left: 30px;
+          top: 30px;
+        }
+
+        .photo-4 {
+          transform: rotate(5deg);
+          z-index: 1;
+          border: 2px solid rgba(212, 175, 55, 0.5);
+          background:
+            url("images/paul.png"),
+            linear-gradient(to bottom,
+              rgba(0, 0, 0, 0.731),
+              rgba(11, 18, 32, 0.769),
+              rgba(212, 175, 55, 0.61)
+            );
+          background-size: cover;
+          background-position: center;
+          left: 30px;
+          top: 30px;
+        }
+
+
+
+      .photo.active {
+        opacity: 1;
+        filter: none;
+        z-index: 5;
+        transform: rotate(0deg) scale(1);
+        border: 2px solid rgba(212, 175, 55, 0.8);
+      }
+
+      .photo.active:hover {
+        box-shadow:
+          0 0 10px rgba(212, 175, 55, 0.4),
+          0 0 25px rgba(212, 175, 55, 0.3),
+          0 0 50px rgba(212, 175, 55, 0.2);
+        border: 2px solid rgba(212, 175, 55, 0.5);
+        transition: box-shadow 0.4s ease, border 0.4s ease;
+      }
+
+        .info-section {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .person-info {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            position: absolute;
+            width: calc(100% - 4rem);
+        }
+
+        .person-info.active {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+        }
+
+        .person-name {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #fdbb2d;
+        }
+
+        .person-role {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #3498db;
+        }
+
+        .person-bio {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .person-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .click-hint {
+            margin-top: 1rem;
+            text-align: center;
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .photo-section, .info-section {
+                width: 100%;
+            }
+        }
+
+/* ===== Overview Section Styles ===== */
+#overview {
+    padding: 90px 0;
+    background: var(--bg);
     color: var(--brand);
-    margin: .5rem 0 0;
+    font-size: 1.7rem;
 }
 
-.introduction .lead {
-    font-size: 1.5rem;
-    color: var(--brand-dark);
-    margin: .5rem auto;
-}
-
-.hero { 
-    padding: calc(var(--space-6) + 10vh) 0 var(--space-6); 
-    background: radial-gradient(600px 300px at 20% 0%, rgba(34,211,238,.15), transparent 70%); 
-}
-
-.hero-grid { 
-    display: grid; 
-    grid-template-columns: 1.2fr .8fr; 
-    gap: var(--space-4); 
-    align-items: center; 
-}
-
-.hero-grid h2 { 
-    font-size: 4rem; 
-    margin: 0 0 var(--space-2); 
-}
-
-.hero-grid p {
-    font-size: 1.4rem; 
-    line-height: 1.6; 
-}
-
-.lead { 
-    color: var(--muted); 
-    max-width: 55ch; 
-}
-
-.profile figcaption { 
-    color: var(--muted); 
-    font-size: .9rem; 
-    text-align: center; 
-    margin-top: 1.5rem;
-}
-
-.profile {
-    position: relative;
-    display: inline-block; 
-    text-align: center;
-}
-
-.profile .blob {
-    position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 110%; 
-    z-index: -1; 
-}
-
-.profile img:not(.blob) {
-    position: relative;
-    max-width: 30rem; 
-    display: block;
+.overview-content {
+    max-width: 800px;
     margin: 0 auto;
-    border-radius: 50%; 
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
 }
 
-/* About */
-#about h2 {
-    font-size: 3rem; 
-    color: var(--brand);
-    margin-bottom: var(--space-4); 
-    text-align: center; 
+.overview-content p {
+    margin-bottom: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--text);
 }
 
-#about p {
-    font-size: 1.2rem; 
-    line-height: 1.6; 
-    max-width: 65ch; 
-    margin: 0 auto; 
-    border: var(--brand) 1px solid;
-    padding: var(--space-3);
+.overview-content p:first-child {
+    font-weight: 700;
+    font-size: 1.3rem;
 }
 
-/* Projects */
-#projects h2 {
-    font-size: 3rem; 
-    color: var(--brand);
-    margin-bottom: var(--space-4); 
-    text-align: center; 
+.overview-content p:last-child {
+    margin-bottom: 0;
+    font-style: italic;
+    opacity: 0.9;
 }
 
-/* Skills */
-#skills h2 {
-    font-size: 3rem; 
-    color: var(--brand);
-    margin-bottom: var(--space-4); 
-    text-align: center; 
+.overview-content {
+    opacity: 1;
+    transform: none;
 }
 
-#skills ul {
-    display: flex; 
-    justify-content: center; 
-    gap: var(--space-3); 
-    padding: 0; 
-    list-style: none; 
+/* Responsive design */
+@media (max-width: 768px) {
+    #overview {
+        padding: 60px 0;
+    }
+    
+    .overview-content {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    .overview-content p {
+        font-size: 1.1rem;
+    }
+    
+    .overview-content p:first-child {
+        font-size: 1.2rem;
+    }
 }
 
-#skills p {
-    font-size: 1.2rem; 
-    line-height: 1.6; 
-    max-width: 65ch; 
-    margin: 2rem auto 0; 
-    text-align: justify; 
-}
 
 /* Contact */
 #contact {
@@ -498,61 +713,6 @@ img.intro-logo {
   border-color: #0077cc;
 }
 
-/* Cards */
-.cards { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: var(--space-3); 
-}
-
-.card { 
-    background: black; 
-    border: 1px solid #D4AF37; 
-    border-radius: var(--radius); 
-    overflow: hidden; 
-    display: flex; 
-    flex-direction: column; 
-}
-
-.card-body { 
-    padding: var(--space-2); 
-    display: grid; 
-    gap: .4rem; 
-}
-
-.card h3 { 
-    margin: .5rem auto;
-    color: var(--brand);
-}
-
-.card p { 
-    color: var(--muted); 
-    margin: .9rem auto; 
-}
-
-.card img { 
-    height: 200px; 
-    padding: 0.5rem;
-    object-fit: cover; 
-    object-position: center; 
-}
-
-/* Chips */
-.chips { 
-    list-style: none; 
-    padding: 0; 
-    margin: 0; 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: .6rem; 
-}
-
-.chips li { 
-    padding: .45rem .7rem; 
-    background: #0b1220; 
-    border: 1px solid #1f2937; 
-    border-radius: 999px; 
-}
 
 /* Footer */
 .site-footer {
@@ -740,12 +900,20 @@ nav {
 /* Quote Section Styles */
 .quote-box {
   text-align: center;
-  padding: 2rem;
+  padding: 5rem;
   background: rgba(212, 175, 55, 0.05);
   border: 1px solid var(--brand);
   border-radius: var(--radius);
   margin: 2rem auto;
   max-width: 800px;
+}
+
+#quote-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(212,175,55,0.3);
 }
 
 #quote {

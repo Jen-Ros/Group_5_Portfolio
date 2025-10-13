@@ -22,96 +22,122 @@
             </label>
             <nav aria-label="Primary">
                 <ul class="nav">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#aboutUs">About Us</a></li>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#quotes">Quotes</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <button id="theme-toggle" aria-label="Toggle light mode" class="theme-btn">🌙</button>
                 </ul>
             </nav>
         </div>
     </header>
+
     <main id="content">
-        <section class="hero" aria-labelledby="intro-title">
-            <div class="container">
-                <div class="introduction">
-                    <img src="images/eye-with-sword.png" alt="Eye with Sword logo" class="intro-logo">
-                    <h2 class="intro-text">When art meets technology, the result is my portfolio.</h2>
-                    <p class="lead">A Digital Alchemist</p>
+
+        <!-- HOME SECTION -->
+        <section id="home" class="home-section">
+        <div class="home-content">
+            <h1 class="home-title">AUREAQUOTES</h1>
+            <p class="home-tagline">"Golden words that inspire brilliance"</p>
+            <a href="#quotes" class="home-btn">Get Inspired</a>
+        </div>
+        </section>
+
+            <!-- ABOUT US SECTION -->
+        
+        <section id="aboutUs">
+        <header>
+        <h1>Our Creative Team</h1>
+        <p class="subtitle">Meet the talented individuals behind this success. Click the photos to explore each team member.</p>
+        </header>
+
+    <div class="portfolio-container">
+        <div class="photo-section">
+            <div class="stacked-photos" id="photoStack">
+                <div class="photo photo-1 active" data-person="1"></div>
+                <div class="photo photo-2" data-person="2"></div>
+                <div class="photo photo-3" data-person="3"></div>
+                <div class="photo photo-4" data-person="4"></div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="person-info active" data-person="1">
+                <h2 class="person-name">Ronald S. Aguillas</h2>
+                <p class="person-role">CSS Styling & Layout, Project Manager</p>
+                <p class="person-bio">I focus on the overall visual design of our project, making sure every layout is clean, responsive, and visually consistent. My goal is to bring life and harmony to each section through thoughtful styling and attention to detail. As Project Manager, I help organize our workflow, guide our design direction, and ensure we meet our goals efficiently and creatively.</p>
+                <div class="person-skills">
+                    <span class="skill">Creative eye for design and color harmony</span>
+                    <span class="skill">Excellent time management and task coordination</span>
+                    <span class="skill">Proficient in CSS animations and transitions</span>
                 </div>
-                <div class="section-divider"></div>
-                <div class="hero-grid">
-                    <figure class="profile">
-                        <img src="images/blob.svg" alt="blob shape" class="blob">
-                        <img src="images/Profile.png" alt="Ronald's Profile Picture">
-                        <figcaption>Based in Butuan City, PH</figcaption>
-                    </figure>
-                    <div>
-                        <h2 id="intro-title">Hello There! I'm <span class="highlight">Ronald</span></h2>
-                        <p class="lead">I am a Web Developer that is passionate about creating beautiful and functional web experiences.</p>
-                        <a href="#projects" class="btn">See my work</a>
+            </div>
+
+            <div class="person-info" data-person="2">
+                <h2 class="person-name">Jennie Rose E. Auditor</h2>
+                <p class="person-role">HTML Structure & Semantics, Project Manager</p>
+                <p class="person-bio">I'm responsible for building the foundation of our website using semantic and accessible HTML. I take pride in creating a structure that’s both well-organized and easy to maintain. As Project Manager, I also help document our progress, coordinate team communication, and keep our development process running smoothly.</p>
+                <div class="person-skills">
+                    <span class="skill">Proficient in semantic and accessible HTML</span>
+                    <span class="skill">Strong documentation and organizational skills</span>
+                    <span class="skill">Reliable teamwork and leadership in planning tasks</span>
+                </div>
+            </div>
+
+            <div class="person-info" data-person="3">
+                <h2 class="person-name">James Roland Salar</h2>
+                <p class="person-role">JavaScript Logic, Project Manager</p>
+                <p class="person-bio">I handle the JavaScript side of our project, ensuring that our website feels dynamic and interactive. From managing logic to enhancing user experience, I enjoy turning creative ideas into functional features. As Project Manager, I also help oversee team collaboration and make sure our code integrates seamlessly across all components.</p>
+                <div class="person-skills">
+                    <span class="skill">Skilled in JavaScript programming and DOM manipulation</span>
+                    <span class="skill">Strong critical thinking and adaptability</span>
+                    <span class="skill">Collaborative mindset for code integration</span>
+                </div>
+            </div>
+
+            <div class="person-info" data-person="4">
+                <h2 class="person-name">Paul Timothy G. Albaciete</h2>
+                <p class="person-role">API Integration, Project Manager</p>
+                <p class="person-bio">I’m in charge of connecting our project to live data through API integration. I focus on building reliable connections between the frontend and external sources, ensuring everything runs efficiently. As Project Manager, I take part in coordinating technical tasks, maintaining smooth communication, and supporting the team’s overall development efforts.</p>
+                <div class="person-skills">
+                    <span class="skill">Knowledgeable in JSON handling and asynchronous operations</span>
+                    <span class="skill">Dependable in managing project flow</span>
+                    <span class="skill">Clear communicator in technical coordination</span>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+            <!-- OVERVIEW SECTION -->
+            <section id="overview" class="section" aria-labelledby="overview">
+                <div class="container">
+                    <h2 id="overview-title">Project Overview</h2>
+                    <div class="overview-content">
+                        <p>As a team of passionate developers, we wanted our portfolio to do more than just display our work—it should inspire. That's why we integrated a Random Quote Generator, a feature that brings life and motivation through dynamic, thought-provoking quotes with every visit.</p>
+                        <p>This project showcases our skills in JavaScript, API integration, and dynamic content rendering, while reflecting our shared passion for creativity and purposeful design—turning our portfolio into a space that both engages and inspires.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-        <div class="section-divider"></div>
-        <section id="about" class="section" aria-labelledby="about-title">
+            </section>
+
+            <!-- QUOTES SECTION -->
+            <section id="quotes" class="section" aria-labelledby="quotes">
             <div class="container">
-                <h2 id="about-title">About</h2>
-                <p id="about-text">I am a web developer that is starting his journey in composing works that are not only functional but also visually appealing. I am highly adaptable and prefer to learn by doing hands-on work. <br><br> I am currently learning new technologies like <strong>PHP</strong> and <strong>Laravel</strong>; and improving my skills to create better web experiences. If you are interested, you can contact me via <a href="#contact">email</a> or see my code on <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a><button id="edit-about" class="edit-btn">✏️ Edit</button></p>
-            </div>
-        </section>
-        <div class="section-divider"></div>
-        <section id="projects" class="section" aria-labelledby="projects-title">
-            <div class="container">
-                <h2 id="projects-title">Projects</h2>
-                <div class="cards">
-                    <article class="card">
-                        <img src="images/project1.png" alt="project 1 image">
-                        <div class="card-body">
-                            <h3>Alexandria</h3>
-                            <p>A library management system proposed for Butuan City Library to make the process of handling books neat and orderly.</p>
-                            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="images/project2.png" alt="project 2 image">
-                        <div class="card-body">
-                            <h3>Ataraxia</h3>
-                            <p>A flowtime technique app for focus and productivity.<br><br></p>
-                            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="images/project3.png" alt="project 3 image">
-                        <div class="card-body">
-                            <h3>Ethos</h3>
-                            <p>A gamified habit tracker for quick and easy habit formation with added fun.<br><br></p>
-                            <a class="btn btn-outline" href="#" target="_blank" rel="noopener">View Project</a>
-                        </div>
-                    </article>
+                <h2 id="quote-title">Your AureaQuotes is...</h2>
+                <div class="quote-box">
+                    <p id="quote" class="quote" aria-live="polite">Click the button to get a quote!</p>
+                    <p id="author" class="author"></p>
+                    <button id="quote-btn">New Quote</button>
                 </div>
             </div>
         </section>
-        <div class="section-divider"></div>
-        <section id="skills" class="section" aria-labelledby="skills-title">
-            <div class="container">
-                <h2 id="skills-title">Skills</h2>
-                <ul class="chips" role="list">
-                    <li><i class="fa-solid fa-code fa-2x"></i></li>
-                    <li><i class="fa-solid fa-paintbrush fa-2x"></i></li>
-                    <li><i class="fa-solid fa-code-branch fa-2x"></i></li>
-                    <li><i class="fa-solid fa-layer-group fa-2x"></i></li>
-                    <li><i class="fa-solid fa-lightbulb fa-2x"></i></li>
-                </ul>
-                <p>My skill set includes: <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Laravel</strong>. I am heavily focused on front-end development and user experience design but I also dabble in some backend development as well because knowing both is always a useful trick in the trade. Aside from these skills, I also possess soft skills such as adaptability, problem-solving, and effective communication.</p>
-            </div>
-        </section>
+
+            <!-- CONTACT SECTION -->
         <div class="section-divider"></div>
         <section id="contact" class="section" aria-labelledby="contact-title">
             <div class="container">
                 <h2 id="contact-title">Seek an Audience</h2>
-                <p class="contact-subtitle">Should you wish to collaborate or consult, please do send a message. I await your correspondence.</p>
+                <p class="contact-subtitle">Should you wish to collaborate or consult, please do send a message. We await your correspondence.</p>
                 <form class="contact-form">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -120,19 +146,8 @@
                 </form>
             </div>
         </section>
-
-        <section id="quote-section" class="section" aria-labelledby="quote-title">
-            <div class="container">
-                <h2 id="quote-title">Random Quote Generator</h2>
-                <div class="quote-box">
-                    <p id="quote" class="quote" aria-live="polite">Click the button to get a quote!</p>
-                    <p id="author" class="author"></p>
-                    <button id="quote-btn">New Quote</button>
-                </div>
-            </div>
-        </section>
     </main>
-    <footer class="site-footer">© <span id="year">2025</span> Ronald - Built with HTML & CSS</footer>
+    <footer class="site-footer">© <span id="year">2025</span> Group 5 - Built with HTML, CSS, and JavaScript </footer>
     <script src="script.js"></script>
 </body>
 </html>
