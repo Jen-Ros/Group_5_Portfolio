@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // ✅ Fallback quotes list
+  // Fallback quotes list
   const fallbackQuotes = [
     { content: "Keep going, everything you need will come to you at the perfect time.", author: "Unknown" },
     { content: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error("Quote API failed:", error.message);
 
-    // ✅ Pick a random fallback quote
+    // Pick a random fallback quote
     const randomQuote = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
 
     res.status(200).json(randomQuote);

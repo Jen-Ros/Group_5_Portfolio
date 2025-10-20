@@ -23,14 +23,14 @@ html {scroll-behavior: smooth;}
 /* Light theme overrides - applied when <body> has class "light-mode" */
 body.light-mode {
   --bg: #f6f7f8; 
-  --panel: #ffffff; 
+  --panel: #ebebeb; 
   --text: #0f1720; 
   --muted: #4b5563; 
-  --brand: #0b7285; 
-  --brand-dark: #085b67; 
+  --brand: #d0a001; 
+  --brand-dark: #b08907; 
   --nav-hover: rgba(11,114,133,0.06);
   --chip-border: rgba(16,24,32,0.06);
-  background-image: none; 
+  background-image: none;
 }
 
 /* ===== Light Mode: Fix Mobile Navigation Visibility ===== */
@@ -44,6 +44,7 @@ body.light-mode .nav a {
 
 body.light-mode .nav a:hover,
 body.light-mode .nav a:focus {
+  text-decoration: none;
   background: var(--nav-hover); 
   color: var(--brand);
 }
@@ -120,6 +121,10 @@ a:hover { text-decoration: underline; }
     padding: .8rem 1rem;
 }
 
+.site-header .container a {
+    text-decoration: none;
+}
+
 .logo {
     font-size: 1.1rem;
     margin: 0;
@@ -140,7 +145,9 @@ a:hover { text-decoration: underline; }
 }
 
 .nav a:focus, .nav a:hover {
-    background: #0b1220;
+    text-decoration: none;
+    color: var(--brand-dark);
+    background: #1c2d4f;
     outline: 2px solid transparent;
 }
 
@@ -261,10 +268,17 @@ section {
   box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
 
+#home a {
+  color: var(--text);
+  text-decoration: none;
+}
+
 .home-btn:hover {
+  background-color: var(--brand-dark);
   filter: brightness(1.15);
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  text-decoration: none;
 }
 
 
@@ -500,6 +514,14 @@ h1 {
     font-size: 1.7rem;
 }
 
+#overview #overview-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--brand);
+    text-shadow: 0 0 10px rgba(212,175,55,0.3);
+}
+
 .overview-content {
     max-width: 800px;
     margin: 0 auto;
@@ -554,7 +576,7 @@ h1 {
 
 /* Contact */
 #contact {
-    background: #0b0b0b;
+    background: var(--panel);
     text-align: center;
     padding: 4rem 1rem;
 }
@@ -689,10 +711,6 @@ h1 {
 }
 
 /* ===== Light Mode Overrides ===== */
-.light-mode a {
-  color: #0077cc;
-}
-
 .light-mode .site-header {
   background: rgba(255, 255, 255, 0.9);
   border-bottom: 2px solid #ddd;
