@@ -227,7 +227,7 @@ section {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  height: 100vh;
+  height: 85vh;
   color: var(--text);
   position: relative;
   overflow: hidden;
@@ -283,6 +283,7 @@ section {
 
 
 /* ==== About Us Section ==== */
+
 header {
             text-align: center;
             margin-bottom: 3rem;
@@ -433,16 +434,6 @@ h1 {
         transition: box-shadow 0.4s ease, border 0.4s ease;
       }
 
-        .info-section {
-            flex: 1;
-            min-width: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
         .person-info {
             opacity: 0;
             transform: translateY(20px);
@@ -486,6 +477,10 @@ h1 {
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.9rem;
+        }
+
+        body.light-mode .skill {
+             background: rgba(0, 0, 0, 0.08);
         }
 
         .click-hint {
@@ -985,3 +980,193 @@ body.light-mode #quote {
 body.light-mode #author {
   color: var(--brand);
 }
+
+/* ===== Gold Swirls (Light Mode Decoration) ===== */
+.gold-swirl {
+  position: absolute;
+  width: 500px;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+.left-swirl {
+  bottom: -40px;
+  left: -120px;
+  transform: scale(1) rotate(0deg);
+}
+
+.right-swirl {
+  top: -60px;
+  right: -100px;
+  transform: scale(1);
+}
+
+body.light-mode .gold-swirl {
+
+  filter: brightness(1.2) contrast(1.05);
+}
+
+.gold-swirl img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== About Us Section: Gilded Border ===== */
+.info-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.info-section {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  width: 100%;
+  max-width: 500px; 
+  height: 500px;
+}
+
+.gilded-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 115%; 
+  height: 115%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* ===== Light Mode Decorative Elements ===== */
+body.light-mode .particle-layer,
+body.light-mode .sparkle-layer,
+body.light-mode .floating-quotes {
+  display: block;
+  pointer-events: none;
+}
+
+body:not(.light-mode) .particle-layer,
+body:not(.light-mode) .sparkle-layer,
+body:not(.light-mode) .floating-quotes {
+  display: none;
+}
+
+/* ===== Floating Gold Orbs ===== */
+body.light-mode .particle-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+body.light-mode .particle-layer::before,
+body.light-mode .particle-layer::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(208, 160, 1, 0.5), transparent 70%);
+  animation: floatOrb 15s infinite ease-in-out alternate;
+}
+
+body.light-mode .particle-layer::before {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+body.light-mode .particle-layer::after {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 3s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0) scale(1); opacity: 0.5; }
+  50% { transform: translateY(-30px) scale(1.1); opacity: 0.7; }
+  100% { transform: translateY(0) scale(1); opacity: 0.5; }
+}
+
+/* ===== Random Sparkles ===== */
+body.light-mode .sparkle-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+body.light-mode .sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: radial-gradient(circle, #ffd700, transparent);
+  border-radius: 50%;
+  animation: sparkleTwinkle 1.5s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+/* ===== Floating Quote Cards ===== */
+body.light-mode .floating-quotes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+body.light-mode .quote-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  color: var(--brand-dark);
+  border: 1px solid rgba(208, 160, 1, 0.3);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  width: 220px;
+  opacity: 0.7;
+  animation: floatQuote 18s infinite ease-in-out;
+}
+
+body.light-mode .quote-card:nth-child(1) {
+  top: 30%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+body.light-mode .quote-card:nth-child(2) {
+  top: 50%;
+  right: 10%;
+  animation-delay: 6s;
+}
+
+body.light-mode .quote-card:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 3s;
+}
+
+@keyframes floatQuote {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+

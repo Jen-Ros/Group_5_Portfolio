@@ -15,6 +15,27 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", isLight ? "light" : "dark");
 });
 
+// ===== Sparkle Effect =====
+
+const sparkleLayer = document.querySelector('.sparkle-layer');
+
+function createSparkle() {
+  const sparkle = document.createElement('div');
+  sparkle.classList.add('sparkle');
+  sparkle.style.top = Math.random() * 100 + '%';
+  sparkle.style.left = Math.random() * 100 + '%';
+  sparkle.style.animationDuration = (1 + Math.random() * 2) + 's';
+  sparkleLayer.appendChild(sparkle);
+
+  setTimeout(() => sparkle.remove(), 2000);
+}
+
+setInterval(createSparkle, 400); 
+
+
+
+
+
 
 // ===== ABOUT US SECTION =====
 document.addEventListener('DOMContentLoaded', function() {
