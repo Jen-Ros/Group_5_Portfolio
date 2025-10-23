@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const photos = document.querySelectorAll('.photo');
             const personInfos = document.querySelectorAll('.person-info');
             
-            // Sample placeholder images (in a real scenario, you would use actual image URLs)
             const imageUrls = [
                 'images/ronald.png',
                 'images/jennie.png',
