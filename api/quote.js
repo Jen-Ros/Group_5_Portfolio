@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   ];
 
   try {
-    const response = await fetch("https://zenquotes.io/api/random");
+    const response = await fetch("https://fakezenquotes.io/api/random");
     if (!response.ok) throw new Error(`API failed: ${response.status}`);
     const data = await response.json();
     const quote = data[0];
